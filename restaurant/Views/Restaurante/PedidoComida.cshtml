@@ -1,0 +1,48 @@
+﻿@model IEnumerable<restaurant.Models.Cliente>
+@{
+    ViewBag.Title = "PedidoComida";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Detalles de Pedidos de Comidas por Cliente</h2>
+
+    @foreach (var cliente in Model)
+    {
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>@cliente.Nombres</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID Pedido</th>
+                                <th>Precio Pedido</th>
+                                <th>Comida</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var pedido in cliente.pedidos)
+                            {
+                                <tr>
+                                    <td>@pedido.IdPedido</td>
+                                    <td>@pedido.PrecioPedido</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            @foreach (var comida in pedido.comida)
+                                            {
+                                                <li>@comida.NombreComida</li>
+                                            }
+                                        </ul>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>

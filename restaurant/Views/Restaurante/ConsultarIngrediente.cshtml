@@ -1,0 +1,84 @@
+﻿@model IEnumerable<restaurant.Models.Ingrediente>
+@{
+    ViewBag.Title = "ConsultarIngrediente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="inicioTitulo">
+    <h1 id="titulo_tenue" class="titulopersona">INGREDIENTES DE LA COMIDA</h1>
+</div>
+<div id="container_table">
+    <table class="table" itemscope itemtype="http://schema.org/Restaurant">
+        <tr>
+            <th itemprop="identifier">Id Ingrediente</th>
+            <th itemprop="name">Nombre Ingrediente</th>
+            <th itemprop="nutrition">Nutrientes</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr itemscope itemtype="http://schema.org/Food">
+                <td itemprop="identifier">@Html.DisplayFor(modelItem => item.IdIngrediente)</td>
+                <td itemprop="name">@Html.DisplayFor(modelItem => item.NombreIngrediente)</td>
+                <td itemprop="nutrition">@Html.DisplayFor(modelItem => item.Nutrientes)</td>
+                <td>
+                    <form action="/Restaurante/CatalogoComida/" asp-controller="Persona">
+                        <button class="btn azul">Volver</button>
+                        <input type="hidden" name="id_solicitud" value="" />
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="Eliminar_comida" asp-controller="Persona">
+                        <button class="btn tenue">Eliminar</button>
+                        <input type="hidden" name="Id_solicitud" value="" />
+                        <input type="hidden" name="Id_comida" value="" />
+                    </form>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<style>
+    .table-container {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th,
+        .table td {
+            padding: 6px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: red;
+            color: white;
+        }
+
+    .btn {
+        padding: 5px 10px;
+        border-radius: 4px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+
+        .btn.azul {
+            background-color: #007bff;
+        }
+
+        .btn.tenue {
+            background-color: #ccc;
+        }
+</style>

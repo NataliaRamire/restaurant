@@ -1,0 +1,54 @@
+﻿@model IEnumerable<restaurant.Models.Empleado>
+
+@{
+    ViewBag.Title = "Empleados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Empleados</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.documento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cargo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.documento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombres)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Correo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cargo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salario)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

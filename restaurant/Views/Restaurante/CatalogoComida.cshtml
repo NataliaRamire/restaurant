@@ -1,0 +1,33 @@
+﻿@model IEnumerable<restaurant.Models.Comida>
+@{
+    ViewBag.Title = "CatalogoComida";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="inicioTitulo">
+    <h1 id="titulo_tenue" class="titulopersona">COMIDAS</h1>
+</div>
+<div class="text-center mx-auto w-90 mt-5">
+    <div class="row my-5 justify-content-center">
+        @foreach (var item in Model)
+        {
+            <div class="col-3 card m-3" style="border-radius: 5%;" itemscope itemtype="http://schema.org/Product">
+                <img src="~/Imagenes/@Html.DisplayFor(model => item.UbicacionImagen)" class="card-img-top" alt="Imagen comida" itemprop="image">
+                <div class="card-body">
+                    <h5 class="card-title" itemprop="name">@Html.DisplayFor(model => item.NombreComida)</h5>
+                    <p itemprop="about" class="fs-5">@Html.DisplayFor(model => item.DescripcioComida)</p>
+                    <p itemprop="about" class="fs-5">@Html.DisplayFor(model => item.OrigenComida)</p>
+                    <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                        <p itemprop="ratingValue" class="fs-5 fw-bold">Calificacion: @Html.DisplayFor(model => item.ValoracionComida)</p>
+                        <p itemprop="reviewCount" class="fs-5 fw-bold">5</p>
+                    </div>
+                    <p itemprop="datePublished" class="fs-5 fw-bold">Precio: @Html.DisplayFor(model => item.PrecioComida)</p>
+                    <a href="@Url.Action("ConsultarIngrediente", "Restaurante", new {indentificador = item.IdComida})" class="btn btn-primary">Detalles</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+

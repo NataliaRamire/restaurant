@@ -1,0 +1,49 @@
+﻿@model IEnumerable<restaurant.Models.Cliente>
+@{
+    ViewBag.Title = "Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Clientes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Documento
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Correo
+            </th>
+            <th>
+                Ocupación
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.documento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombres)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Correo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ocupacion)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

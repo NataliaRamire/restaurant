@@ -1,0 +1,33 @@
+﻿@model IEnumerable<restaurant.Models.Ingrediente>
+
+@{
+    ViewBag.Title = "CatalogoIngredientes";
+}
+
+<h2>Lista de Ingredientes</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ingrediente in Model)
+        {
+            <tr>
+                <td>@ingrediente.IdIngrediente</td>
+                <td>@ingrediente.NombreIngrediente</td>
+                <td>
+                    <!-- Botón "Ver Comidas" -->
+                    <form asp-action="VerComidas" asp-controller="Ingredientes" method="get">
+                        <input type="hidden" name="id" value="@ingrediente.IdIngrediente" />
+                        <a href="@Url.Action("IngredienteComida", "Restaurante", new {identificador = ingrediente.IdIngrediente})" class="btn btn-primary">Ver Comidas</a>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

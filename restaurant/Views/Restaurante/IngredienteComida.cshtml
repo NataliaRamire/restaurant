@@ -1,0 +1,30 @@
+﻿@model IEnumerable<restaurant.Models.Comida>
+@{
+    ViewBag.Title = "IngredienteComida";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.Count() > 0)
+{
+    <div id="inicioTitulo">
+        <h1 id="titulo_tenue" class="titulopersona">COMIDAS</h1>
+    </div>
+    <div class="text-center mx-auto w-90 mt-5">
+        <div class="row my-5 justify-content-center">
+            @foreach (var item in Model)
+            {
+                <div class="col-3 card m-3" style="border-radius: 5%;" itemscope itemtype="http://schema.org/Product">
+                    <img src="~/Imagenes/@Html.DisplayFor(model => item.UbicacionImagen)" class="card-img-top" alt="Imagen comida" itemprop="image">
+                    <div class="card-body">
+                        <h5 class="card-title" itemprop="name">@item.NombreComida</h5>                        
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <p>No se encontraron comidas con este ingrediente.</p>
+}
+

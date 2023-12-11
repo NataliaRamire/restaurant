@@ -1,0 +1,134 @@
+﻿@model IEnumerable<restaurant.Models.Comida>
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        .hero-text h2,
+        .hero-text p {
+            color: #000;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 0;
+            color: #333;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+            .hero-image img {
+                display: inline-block;
+                vertical-align: middle;
+                max-width: 100%;
+                height: auto;
+            }
+
+        .hero-text {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+            .hero-text h2,
+            .hero-text p {
+                color: #000000;
+            }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+
+            .hero-text h2 {
+                font-size: 48px;
+                margin: 0;
+                color: #fff;
+            }
+
+            .hero-text p {
+                font-size: 24px;
+                margin-bottom: 20px;
+                color: #fff;
+            }
+
+        .reservation-button {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 24px;
+            border-radius: 5px;
+        }
+
+        .decorative-divider {
+            background-color: #333;
+            height: 1px;
+            margin: 40px 0;
+        }
+
+        .about-section {
+            text-align: center;
+            padding: 40px;
+            background-color: #f2f2f2;
+        }
+
+            .about-section h2 {
+                font-size: 36px;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .about-section p {
+                font-size: 18px;
+                margin-bottom: 20px;
+                color: #666;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Restaurante El Buen Sabor</h1>
+    </header>
+    <div class="hero-image">
+        <img src="~/Imagenes/restaurante.jpg" alt="Restaurante">
+        <div class="hero-text">
+
+
+        </div>
+    </div>
+    <div class="decorative-divider"></div>
+    <div class="about-section">
+        <h2>Sobre nosotros</h2>
+        <p>En El Buen Sabor nos apasiona ofrecer a nuestros comensales una experiencia culinaria inolvidable. Nuestro equipo de chefs expertos combina técnicas innovadoras con ingredientes frescos y de calidad para crear platos que deleitan los sentidos. Nuestro ambiente acogedor y nuestro servicio amable y atento hacen que cada visita sea especial. Ven y descubre el auténtico sabor en El Buen Sabor.</p>
+        <h3>Nuestra historia</h3>
+        <p>El Buen Sabor fue fundado en el año 2005 por el chef Juan Pérez, quien soñaba con compartir su pasión por la gastronomía con el mundo. Desde entonces, nos hemos convertido en un referente culinario en la ciudad, ganando numerosos premios y reconocimientos por nuestra excelencia en sabores y servicio. Nuestra dedicación y compromiso con la calidad nos han permitido crear una comunidad de comensales fieles que regresan una y otra vez.</p>
+        <h3>Nuestro compromiso</h3>
+        <p>En El Buen Sabor nos preocupamos por el medio ambiente y la sostenibilidad. Trabajamos en estrecha colaboración con proveedores locales para obtener ingredientes frescos y de temporada, reduciendo nuestra huella ambiental. Además, nos esforzamos por crear un ambiente inclusivo y acogedor para todos nuestros clientes, sin importar sus preferencias alimentarias o necesidades dietéticas. Tu satisfacción y bienestar son nuestra prioridad.</p>
+    </div>
+</body>
+</html>
+
+
